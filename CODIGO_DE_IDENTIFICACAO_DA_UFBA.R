@@ -6,7 +6,10 @@
 library(sparklyr);
 library(dplyr);
 
-IES_db = 'C:/Users/bruno/Desktop/projeto/Dados_Ensino_Superior/Microdados_Educação_Superior_2019/dados/SUP_IES_2019.csv';
+IES_db = 'C:\Users\bruno\Desktop\projeto\Dados_Ensino_Superior\Microdados_Educaï¿½ï¿½o_Superior_2019\dados\SUP_IES_2019.csv';
+# IES_db = '../Dados_Ensino_Superior/Microdados_EducaÃ§Ã£o_Superior_2019/dados/SUP_IES_2019.CSV'
+
+sc <- spark_connect(master = 'local', version = '2.3')
 
 IES_dados = spark_read_csv(sc, name = 'ies_2019', header = TRUE, path = IES_db, delimiter = '|', memory = FALSE);
 

@@ -4,6 +4,7 @@
 
 library(sparklyr)
 library(dplyr)
+library(readxl)
 
 sc <- spark_connect(master = 'local', version = '2.3')
 
@@ -14,7 +15,8 @@ path_db = 'C:/Users/bruno/Desktop/projeto/Dados_Ensino_Superior/Microdados_Educa
 dados = spark_read_csv(sc, name = name, header = TRUE, path = path_db, delimiter = '|', memory = FALSE)
 
 tabela <- dados %>%
-          group_by() %>%
+          group_by(CO_IES) %>%
           filter(CO_IES == 578) %>%
           sdf_register('tabela')
+
 tabela
