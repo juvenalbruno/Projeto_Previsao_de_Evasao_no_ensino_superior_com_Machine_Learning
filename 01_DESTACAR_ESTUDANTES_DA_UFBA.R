@@ -56,6 +56,18 @@ tabela_2011 <- dados9 %>% group_by(CO_IES) %>% filter(CO_IES == 578) %>% sdf_reg
 tabela_2010 <- dados10 %>% group_by(CO_IES) %>% filter(CO_IES == 578) %>% sdf_register('tabela_2010')
 tabela_2009 <- dados11 %>% group_by(CO_IES) %>% filter(CO_IES == 578) %>% sdf_register('tabela_2009')
 
+count(tabela_2019)
+count(tabela_2018)
+count(tabela_2017)
+count(tabela_2016)
+count(tabela_2015)
+count(tabela_2014)
+count(tabela_2013)
+count(tabela_2012)
+count(tabela_2011)
+count(tabela_2010)
+count(tabela_2009)
+
 write.csv(tabela_2019, 'Alunos_2019.csv')
 write.csv(tabela_2018, 'Alunos_2018.csv')
 write.csv(tabela_2017, 'Alunos_2017.csv')
