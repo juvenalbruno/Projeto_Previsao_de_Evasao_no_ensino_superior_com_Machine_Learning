@@ -18,7 +18,6 @@ name7 = 'alunos_2013'
 name8 = 'alunos_2012'
 name9 = 'alunos_2011'
 name10 = 'alunos_2010'
-name11 = 'alunos_2009'
 
 path_Aluno19 = 'C:/Users/bruno/Desktop/projeto/Dados/ALUNO_2019.csv'
 path_Aluno18 = 'C:/Users/bruno/Desktop/projeto/Dados/ALUNO_2018.csv'
@@ -30,7 +29,6 @@ path_Aluno13 = 'C:/Users/bruno/Desktop/projeto/Dados/ALUNO_2013.csv'
 path_Aluno12 = 'C:/Users/bruno/Desktop/projeto/Dados/ALUNO_2012.csv'
 path_Aluno11 = 'C:/Users/bruno/Desktop/projeto/Dados/ALUNO_2011.csv'
 path_Aluno10 = 'C:/Users/bruno/Desktop/projeto/Dados/ALUNO_2010.csv'
-path_Aluno09 = 'C:/Users/bruno/Desktop/projeto/Dados/ALUNO_2009.csv'
 
 dados1 = spark_read_csv(sc, name1 = name, header = TRUE, path = path_Aluno19, delimiter = '|', memory = FALSE);
 dados2 = spark_read_csv(sc, name2 = name, header = TRUE, path = path_Aluno18, delimiter = '|', memory = FALSE);
@@ -42,7 +40,6 @@ dados7 = spark_read_csv(sc, name7 = name, header = TRUE, path = path_Aluno13, de
 dados8 = spark_read_csv(sc, name8 = name, header = TRUE, path = path_Aluno12, delimiter = '|', memory = FALSE);
 dados9 = spark_read_csv(sc, name9 = name, header = TRUE, path = path_Aluno11, delimiter = '|', memory = FALSE);
 dados10 = spark_read_csv(sc, name10 = name, header = TRUE, path = path_Aluno10, delimiter = '|', memory = FALSE);
-dados11 = spark_read_csv(sc, name11 = name, header = TRUE, path = path_Aluno09, delimiter = '|', memory = FALSE);
 
 tabela_2019 <- dados1 %>% group_by(CO_IES) %>% filter(CO_IES == 578) %>% sdf_register('tabela_2019')
 tabela_2018 <- dados2 %>% group_by(CO_IES) %>% filter(CO_IES == 578) %>% sdf_register('tabela_2018')
@@ -54,7 +51,6 @@ tabela_2013 <- dados7 %>% group_by(CO_IES) %>% filter(CO_IES == 578) %>% sdf_reg
 tabela_2012 <- dados8 %>% group_by(CO_IES) %>% filter(CO_IES == 578) %>% sdf_register('tabela_2012')
 tabela_2011 <- dados9 %>% group_by(CO_IES) %>% filter(CO_IES == 578) %>% sdf_register('tabela_2011')
 tabela_2010 <- dados10 %>% group_by(CO_IES) %>% filter(CO_IES == 578) %>% sdf_register('tabela_2010')
-tabela_2009 <- dados11 %>% group_by(CO_IES) %>% filter(CO_IES == 578) %>% sdf_register('tabela_2009')
 
 count(tabela_2019)
 count(tabela_2018)
@@ -66,7 +62,6 @@ count(tabela_2013)
 count(tabela_2012)
 count(tabela_2011)
 count(tabela_2010)
-count(tabela_2009)
 
 write.csv(tabela_2019, 'Alunos_2019.csv')
 write.csv(tabela_2018, 'Alunos_2018.csv')
@@ -78,4 +73,3 @@ write.csv(tabela_2013, 'Alunos_2013.csv')
 write.csv(tabela_2012, 'Alunos_2012.csv')
 write.csv(tabela_2011, 'Alunos_2011.csv')
 write.csv(tabela_2010, 'Alunos_2010.csv')
-write.csv(tabela_2009, 'Alunos_2009.csv')
