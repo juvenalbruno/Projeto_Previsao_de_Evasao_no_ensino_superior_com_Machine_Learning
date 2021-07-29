@@ -45,25 +45,16 @@ tabela_2010 <- dados10
 tabela_ufba_unificada = sdf_bind_rows( dados19, dados18, dados17, dados16, dados15, dados14, dados13, dados12, dados11, dados10)
 write.csv(tabela_ufba_unificada, 'Tabela_Alunos_UFBA_Unificada.csv')
 
-tabela_19_18 = sdf_bind_rows( dados19, dados18)
-tabela_19_18
-tabela_19_a_17 = sdf_bind_rows( tabela_19_18, dados17)
-tabela_19_a_17
-tabela_19_a_16 = sdf_bind_rows( tabela_19_a_17, dados16)
-tabela_19_a_16
-tabela_19_a_15 = sdf_bind_rows( tabela_19_a_16, dados15)
-tabela_19_a_15
-tabela_19_a_14 = sdf_bind_rows( tabela_19_a_15, dados14)
-tabela_19_a_14
-tabela_19_a_13 = sdf_bind_rows( tabela_19_a_14, dados13)
-tabela_19_a_13
-tabela_19_a_12 = sdf_bind_rows( tabela_19_a_13, dados12)
-tabela_19_a_12
-tabela_19_a_11 = sdf_bind_rows( tabela_19_a_12, dados11)
-tabela_19_a_11
-tabela_19_a_10 = sdf_bind_rows( tabela_19_a_11, dados10)
-tabela_19_a_10
+tabela_final = sdf_bind_rows( dados19, dados18)
+tabela_final = sdf_bind_rows(tabela_final, dados17)
+tabela_final = sdf_bind_rows(tabela_final, dados16)
+tabela_final = sdf_bind_rows(tabela_final, dados15)
+tabela_final = sdf_bind_rows(tabela_final, dados14)
+tabela_final = sdf_bind_rows(tabela_final, dados13)
+tabela_final = sdf_bind_rows(tabela_final, dados12)
+tabela_final = sdf_bind_rows(tabela_final, dados11)
+tabela_final = sdf_bind_rows(tabela_final, dados10)
 
 
-write.csv(tabela_19_a_10, 'Tabela_Alunos_UFBA_Unificada.csv')
+write.csv(tabela_final, 'Tabela_Alunos_UFBA_Unificada.csv')
 
